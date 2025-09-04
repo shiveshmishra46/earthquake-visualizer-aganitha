@@ -1,0 +1,100 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+a {
+  color: #2c7be5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Mobile/Tablet Layout (stacked) */
+.app-content.mobile {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+}
+
+.app-content.mobile .sidebar {
+  width: 100%;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.app-content.mobile .map-wrapper {
+  height: 50vh;
+  position: relative;
+}
+
+/* Desktop Layout (side-by-side) */
+.app-content.desktop {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 120px); /* Adjust based on header/footer height */
+}
+
+.app-content.desktop .sidebar {
+  width: 350px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-content.desktop .map-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+/* Common Styles */
+.error-message {
+  padding: 20px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .app-content.mobile .sidebar {
+    max-height: 55vh;
+  }
+  
+  .app-content.mobile .map-wrapper {
+    height: 45vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-content.mobile .sidebar {
+    max-height: 50vh;
+  }
+  
+  .app-content.mobile .map-wrapper {
+    height: 40vh;
+  }
+}

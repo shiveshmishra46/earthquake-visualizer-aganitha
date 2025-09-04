@@ -1,0 +1,207 @@
+.earthquake-list {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Fill the available height */
+  max-height: 100%; /* Don't exceed parent's height */
+}
+
+.earthquake-list h2 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #2c3e50;
+  flex-shrink: 0; /* Don't allow heading to shrink */
+}
+
+/* Add this new container for scrolling */
+.list-scroll-container {
+  height: calc(100% - 50px); /* Fixed height: full height minus heading */
+  max-height: 500px; /* Maximum height it can take */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the scrollbar for better appearance */
+.list-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.list-scroll-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.list-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.earthquake-item {
+  display: flex;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.earthquake-item:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.earthquake-item.selected {
+  border: 2px solid #2c7be5;
+  background-color: #f0f7ff;
+}
+
+.magnitude-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.earthquake-details {
+  flex: 1;
+  overflow: hidden;
+}
+
+.earthquake-location {
+  font-size: 1rem;
+  margin: 0 0 5px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.earthquake-time {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.tsunami-badge {
+  display: inline-block;
+  background-color: #721c24;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  margin-top: 5px;
+}
+
+.no-earthquakes {
+  padding: 20px;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .earthquake-list {
+    padding: 10px;
+  }
+  
+  .earthquake-list h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Also adjust the scrollable container height for mobile */
+  .list-scroll-container {
+    max-height: 40vh; /* Fixed height for mobile */
+  }
+  
+  .magnitude-indicator {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .earthquake-location {
+    font-size: 0.9rem;
+  }
+  
+  .earthquake-time {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .earthquake-list {
+    padding: 8px;
+  }
+  
+  .list-container {
+    gap: 8px;
+  }
+  
+  .earthquake-item {
+    padding: 8px;
+  }
+  
+  .magnitude-indicator {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    font-size: 0.8rem;
+  }
+  
+  .earthquake-location {
+    font-size: 0.85rem;
+  }
+  
+  .earthquake-time {
+    font-size: 0.75rem;
+  }
+  
+  .tsunami-badge {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .list-scroll-container {
+    height: 40vh; /* Fixed height on mobile */
+    max-height: 40vh; /* Maximum height it can take */
+  }
+}
+
+@media (max-width: 768px) {
+  .list-scroll-container {
+    height: 35vh;
+    max-height: 35vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-scroll-container {
+    height: 30vh;
+    max-height: 30vh;
+  }
+}
