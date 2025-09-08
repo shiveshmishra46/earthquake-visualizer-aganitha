@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-[earthquakeviz.netlify.app](#)
+Demo Link - [earthquakeviz.netlify.app](#)
 
 ## Project Overview
 
