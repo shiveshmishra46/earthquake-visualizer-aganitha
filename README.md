@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-[Explore Earthquake Visualizer](#)
+earthquakeviz.netlify.app(#)
 
 ## Project Overview
 
